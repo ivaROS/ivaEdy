@@ -1,0 +1,30 @@
+<package>
+  <name>edy_dualarm_control</name>
+  <version>1.2.0</version>
+ <description>
+      controller manager for edy robot arm with 8 motors(1 motor for gripper)
+  </description>
+
+  <author>ruinianxu</author>
+  <author email="rxu72@gatech.edu">ruinianxu</author>
+  <maintainer email="rxu72@gatech.edu">ruinianxu</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>cmake_modules</build_depend>
+
+  <build_depend>dynamixel_controllers</build_depend>
+  <build_depend>ros_control</build_depend>
+  <build_depend>ros_controllers</build_depend>
+
+  <run_depend>ros_control</run_depend>
+  <run_depend>ros_controllers</run_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+
+  <run_depend>rqt_gui</run_depend>
+  <run_depend>effort_controllers</run_depend>
+
+</package>

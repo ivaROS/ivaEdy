@@ -1,0 +1,14 @@
+<launch>
+  <node name="edy_controller_manager" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+    <rosparam>
+        namespace: edy_dualarm_manager
+        serial_ports:
+            port_0:
+                port_name: "/dev/ttyUSB0"
+                baud_rate: 1000000
+                min_motor_id: 1
+                max_motor_id: 16
+                update_rate: 100
+    </rosparam>
+  </node>
+</launch>

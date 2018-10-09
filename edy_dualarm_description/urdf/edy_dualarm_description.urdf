@@ -1,0 +1,1033 @@
+<robot
+  name="edy_dualarm_description">
+
+  <link name="root">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size = "0.0 0.0 0.0"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size = "0.0 0.0 0.0"/> 
+      </geometry>
+    </collision>     
+  </link>
+
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
+  <link name="world"/> 
+  <joint name="connect_root_and_world" type="fixed">
+    <parent link="world"/>
+    <child link="root"/>
+    <axis xyz="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />  
+  </joint>
+
+  <joint name="root_to_base_link" type="fixed">
+    <parent link="root"/>
+    <child link="base_link"/>
+    <axis xyz="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />  
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-8.44479065753578E-05 -0.000636180312193479 0.0212601142172631"
+        rpy="0 0 0" />
+      <mass
+        value="8.7560068616092" />
+      <inertia
+        ixx="0.652973562650313"
+        ixy="7.88359359200014E-07"
+        ixz="0.000110527976260091"
+        iyy="0.0115137020684432"
+        iyz="0.000594226973441064"
+        izz="0.641473931098582" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="l_link_2">
+    <inertial>
+      <origin
+        xyz="1.16549826041368E-05 -2.81399161389806E-05 0.0188265358893286"
+        rpy="0 0 0" />
+      <mass
+        value="0.0114364854550291" />
+      <inertia
+        ixx="3.73637530320685E-06"
+        ixy="-1.5923870097386E-08"
+        ixz="2.21160451097953E-09"
+        iyy="1.88803475092865E-06"
+        iyz="-5.33971810533593E-09"
+        izz="1.86593343206724E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.022394 -0.45 0.1679"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="l_link_3">
+    <inertial>
+      <origin
+        xyz="0.00377950923156622 0.000527304140237717 -0.0366688121472651"
+        rpy="0 0 0" />
+      <mass
+        value="0.131859897677232" />
+      <inertia
+        ixx="0.000102433380339424"
+        ixy="1.35673599109775E-08"
+        ixz="1.93329343164657E-05"
+        iyy="0.000106296072437431"
+        iyz="-7.39507062462504E-08"
+        izz="3.86280040986738E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0395"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="l_link_2" />
+    <child
+      link="l_link_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="l_link_4">
+    <inertial>
+      <origin
+        xyz="-2.03305933710318E-06 4.62434070702678E-07 0.08981065169112"
+        rpy="0 0 0" />
+      <mass
+        value="0.0241054510624508" />
+      <inertia
+        ixx="5.4303824470158E-05"
+        ixy="-2.3677049830155E-14"
+        ixz="-4.30439883696078E-09"
+        iyy="5.36854167672868E-05"
+        iyz="-7.22484083942957E-10"
+        izz="6.19191645125992E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint_3"
+    type="revolute">
+    <origin
+      xyz="0 0.0005 -0.093245"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="l_link_3" />
+    <child
+      link="l_link_4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="l_link_5">
+    <inertial>
+      <origin
+        xyz="-1.06226888885175E-05 0.000270564059653838 -0.044082243378421"
+        rpy="0 0 0" />
+      <mass
+        value="0.0641524025581005" />
+      <inertia
+        ixx="0.000178842870845816"
+        ixy="-1.40191427148011E-11"
+        ixz="3.06353374647801E-09"
+        iyy="0.000178843164526224"
+        iyz="-5.25500823512767E-08"
+        izz="3.28851959772553E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint_4"
+    type="revolute">
+    <origin
+      xyz="0 0 0.176"
+      rpy="3.1416 0 0" />
+    <parent
+      link="l_link_4" />
+    <child
+      link="l_link_5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="l_link_6">
+    <inertial>
+      <origin
+        xyz="-3.18818024536149E-07 2.26992259699799E-06 0.0109195452878323"
+        rpy="0 0 0" />
+      <mass
+        value="0.00729134298782244" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint_5"
+    type="revolute">
+    <origin
+      xyz="0.02087 0.00025 -0.2213"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="l_link_5" />
+    <child
+      link="l_link_6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="l_link_7">
+    <inertial>
+      <origin
+        xyz="-0.000229999999992903 -0.0050249094346575 0.0429672230397742"
+        rpy="0 0 0" />
+      <mass
+        value="0.00745295126954094" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint_6"
+    type="revolute">
+    <origin
+      xyz="0 0 0.026"
+      rpy="0 0 3.1416" />
+    <parent
+      link="l_link_6" />
+    <child
+      link="l_link_7" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="l_link_8">
+    <inertial>
+      <origin
+        xyz="-2.44942954807925E-13 0.0106481613936442 0.00198661888805018"
+        rpy="0 0 0" />
+      <mass
+        value="0.00508676199801506" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint_7"
+    type="revolute">
+    <origin
+      xyz="-0.00023 0 0.08337"
+      rpy="0 0 3.1416" />
+    <parent
+      link="l_link_7" />
+    <child
+      link="l_link_8" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="l_link_9">
+    <inertial>
+      <origin
+        xyz="3.94129173741931E-15 1.4210854715202E-14 0.0150027537839477"
+        rpy="0 0 0" />
+      <mass
+        value="0.00675806648920072" />
+      <inertia
+        ixx="4.94796071753635E-07"
+        ixy="0"
+        ixz="-2.99279768220556E-21"
+        iyy="4.94796071753635E-07"
+        iyz="0"
+        izz="1.85010214382277E-35" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/l_link_9.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint_8"
+    type="revolute">
+    <origin
+      xyz="0 0 0.04087"
+      rpy="0 0 3.1416" />
+    <parent
+      link="l_link_8" />
+    <child
+      link="l_link_9" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="l_link_eef" />
+  <joint
+    name="l_joint_eef"
+    type="fixed">
+    <origin
+      xyz="0 0 0.07887"
+      rpy="0 0 0" />
+    <parent
+      link="l_link_8" />
+    <child
+      link="l_link_eef" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_link_2">
+    <inertial>
+      <origin
+        xyz="1.16549826068013E-05 -2.81399161204954E-05 0.0188265358893318"
+        rpy="0 0 0" />
+      <mass
+        value="0.011436485455094" />
+      <inertia
+        ixx="3.73637530324762E-06"
+        ixy="-1.59238700991352E-08"
+        ixz="2.21160451089879E-09"
+        iyy="1.88803475095057E-06"
+        iyz="-5.33971811146526E-09"
+        izz="1.8659334320861E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.022394 0.45 0.1669"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="r_link_3">
+    <inertial>
+      <origin
+        xyz="0.00377950923110637 0.000527304140288232 -0.0366688121480503"
+        rpy="0 0 0" />
+      <mass
+        value="0.131859897681141" />
+      <inertia
+        ixx="0.000102433380341571"
+        ixy="1.35673598568709E-08"
+        ixz="1.93329343137417E-05"
+        iyy="0.000106296072438407"
+        iyz="-7.39507059860089E-08"
+        izz="3.86280040869538E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0395"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="r_link_2" />
+    <child
+      link="r_link_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="r_link_4">
+    <inertial>
+      <origin
+        xyz="-2.03305933710318E-06 4.62434070369611E-07 0.0898106516911197"
+        rpy="0 0 0" />
+      <mass
+        value="0.0241054510624508" />
+      <inertia
+        ixx="5.43038244701581E-05"
+        ixy="-2.36770465049665E-14"
+        ixz="-4.30439883692588E-09"
+        iyy="5.36854167672869E-05"
+        iyz="-7.22484083901029E-10"
+        izz="6.19191645125972E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_joint_3"
+    type="revolute">
+    <origin
+      xyz="0 0.0005 -0.093245"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="r_link_3" />
+    <child
+      link="r_link_4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="r_link_5">
+    <inertial>
+      <origin
+        xyz="-1.06226888925143E-05 0.000270564059653644 -0.0440822433784202"
+        rpy="0 0 0" />
+      <mass
+        value="0.0641524025581004" />
+      <inertia
+        ixx="0.000178842870845817"
+        ixy="-1.40191427149473E-11"
+        ixz="3.06353374628126E-09"
+        iyy="0.000178843164526225"
+        iyz="-5.25500823511591E-08"
+        izz="3.28851959772606E-10" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_joint_4"
+    type="revolute">
+    <origin
+      xyz="0 0 0.176"
+      rpy="3.1416 0 0" />
+    <parent
+      link="r_link_4" />
+    <child
+      link="r_link_5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="r_link_6">
+    <inertial>
+      <origin
+        xyz="-3.18818018540945E-07 2.26992259722003E-06 0.0109195452878321"
+        rpy="0 0 0" />
+      <mass
+        value="0.00729134298782232" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_joint_5"
+    type="revolute">
+    <origin
+      xyz="0.02087 0.00025 -0.2213"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="r_link_5" />
+    <child
+      link="r_link_6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="r_link_7">
+    <inertial>
+      <origin
+        xyz="-0.000229999999997732 -0.00502490943466483 0.0429672230397593"
+        rpy="0 0 0" />
+      <mass
+        value="0.00745295126954106" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_joint_6"
+    type="revolute">
+    <origin
+      xyz="0 0 0.026"
+      rpy="0 0 3.1416" />
+    <parent
+      link="r_link_6" />
+    <child
+      link="r_link_7" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="r_link_8">
+    <inertial>
+      <origin
+        xyz="-2.35589325825458E-13 0.0106481613936613 0.00198661888802865"
+        rpy="0 0 0" />
+      <mass
+        value="0.00508676199801507" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_joint_7"
+    type="revolute">
+    <origin
+      xyz="-0.00023 0 0.08337"
+      rpy="0 0 3.1416" />
+    <parent
+      link="r_link_7" />
+    <child
+      link="r_link_8" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="r_link_9">
+    <inertial>
+      <origin
+        xyz="2.29594121492482E-13 2.02513058054077E-05 0.0140853523121591"
+        rpy="0 0 0" />
+      <mass
+        value="0.0423839787748426" />
+      <inertia
+        ixx="1.59637458486247E-06"
+        ixy="-3.97082077373735E-19"
+        ixz="9.45193910752324E-17"
+        iyy="2.51057190391324E-05"
+        iyz="1.00420065493654E-08"
+        izz="2.35094707979078E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://edy_dualarm_description/meshes/r_link_9.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_joint_8"
+    type="revolute">
+    <origin
+      xyz="0 0 0.039"
+      rpy="0 0 3.1416" />
+    <parent
+      link="r_link_8" />
+    <child
+      link="r_link_9" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="6"
+      velocity="2" />
+  </joint>
+  <link
+    name="r_link_eef" />
+  <joint
+    name="r_joint_eef"
+    type="fixed">
+    <origin
+      xyz="0 0 0.06739"
+      rpy="0 0 0" />
+    <parent
+      link="r_link_8" />
+    <child
+      link="r_link_eef" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

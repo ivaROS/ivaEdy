@@ -1,0 +1,17 @@
+<launch>
+ <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" textfile="$(find edy_dualarm_description)/urdf/edy_dualarm_description.urdf" /> 
+
+  <!-- Disable torque on all humanoid joints/motors -->
+  <node name="disable_torque_edy" pkg="edy_dualarm_control" type="disable_torque_edy.py"/>
+
+  <!-- Start Handy joint state publisher (dynamixel_msgs.msg JointState -> sensor_msgs.msg JointState) -->
+  <node name="edy_joint_state_publisher" pkg="edy_dualarm_control" type="edy_joint_state_publisher.py"/>
+  
+  <!-- Convert joint states to TF transforms for rviz, etc -->
+  <node 
+    name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"> 
+    <param name="publish_frequency" value="50" />
+  </node>
+
+</launch>

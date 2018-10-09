@@ -1,0 +1,143 @@
+<launch>
+  <rosparam file="$(find edy_dualarm_control)/config/edy_dualram_controllers.yaml" command="load"/>
+
+  <node name="edy_controller_spawner_l_1" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_1"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_2" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+	      edy_position_controller_l_2"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_3" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_3"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_4" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_4"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_5" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_5"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_6" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_6"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_7" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_7"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_8" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_8"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_r_1" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_r_1"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_r_2" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+	      edy_position_controller_r_2"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_r_3" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_r_3"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_r_4" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_r_4"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_r_5" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_r_5"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_r_6" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_r_6"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_r_7" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_r_7"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_r_8" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_r_8"
+        output="screen"/>
+
+  <node name="edy_action_controller_spawner_r" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --type=meta
+              edy_joint_trajectory_action_controller_r
+              edy_position_controller_r_1
+	      edy_position_controller_r_2
+              edy_position_controller_r_3
+              edy_position_controller_r_4
+              edy_position_controller_r_5
+              edy_position_controller_r_6
+              edy_position_controller_r_7"
+        output="screen"/>
+
+  <node name="edy_action_controller_spawner_l" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --type=meta
+              edy_joint_trajectory_action_controller_l
+              edy_position_controller_l_1
+	      edy_position_controller_l_2
+              edy_position_controller_l_3
+              edy_position_controller_l_4
+              edy_position_controller_l_5
+              edy_position_controller_l_6
+              edy_position_controller_l_7"
+        output="screen"/>
+
+</launch>
+

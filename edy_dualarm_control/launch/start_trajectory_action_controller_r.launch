@@ -1,0 +1,18 @@
+<launch>
+  <rosparam file="$(find edy_dualarm_control)/config/edy_dualram_controllers.yaml" command="load"/>
+
+  <node name="edy_action_controller_spawner_r" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_dualarm_manager
+              --type=meta
+              edy_joint_trajectory_action_controller_r
+              edy_position_controller_r_1
+	      edy_position_controller_r_2
+              edy_position_controller_r_3
+              edy_position_controller_r_4
+              edy_position_controller_r_5
+              edy_position_controller_r_6
+              edy_position_controller_r_7"
+        output="screen"/>
+
+</launch>
+
