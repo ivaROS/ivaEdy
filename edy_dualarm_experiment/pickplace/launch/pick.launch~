@@ -1,0 +1,9 @@
+<launch>
+  <node name="pick"
+        pkg="edy_experiment"
+        type="pick"
+        respawn="false" output="screen">
+    <rosparam command="load"
+              file="$(find edy_moveit_config)/config/kinematics.yaml"/>
+  </node>
+</launch>
