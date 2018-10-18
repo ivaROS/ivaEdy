@@ -11,6 +11,11 @@ catkin_make
 ```
 Note: you may see error when generating cmakelist, please install any missing packages according to the error messages. 
 
+ex. you will need `dynamixel_motor`
+```
+git clone https://github.com/arebgun/dynamixel_motor.git
+```
+
 ## Run edy in the real world
 Source the pacakges
 ```
