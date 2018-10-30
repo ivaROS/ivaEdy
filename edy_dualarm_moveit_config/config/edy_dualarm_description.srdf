@@ -15,12 +15,12 @@
     <group name="right_arm">
         <chain base_link="root" tip_link="r_link_eef" />
     </group>
-    <group name="suction">
+    <group name="gripper_l">
         <link name="l_link_eef" />
         <link name="l_link_9" />
         <joint name="l_joint_8" />
     </group>
-    <group name="gripper">
+    <group name="gripper_r">
         <link name="r_link_9" />
         <link name="r_link_eef" />
         <joint name="r_joint_8" />
@@ -45,8 +45,8 @@
         <joint name="r_joint_7" value="0" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="suction" parent_link="l_link_eef" group="suction" />
-    <end_effector name="gripper" parent_link="r_link_eef" group="gripper" />
+    <end_effector name="gripper_l" parent_link="l_link_eef" group="gripper_l" />
+    <end_effector name="gripper_r" parent_link="r_link_eef" group="gripper_r" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_to_base_virtual_joint" type="fixed" parent_frame="world_frame" child_link="world" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->

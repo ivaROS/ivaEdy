@@ -7,6 +7,12 @@
                 port_name: "/dev/ttyUSB0"
                 baud_rate: 1000000
                 min_motor_id: 1
+                max_motor_id: 8
+                update_rate: 100
+            port_1:
+                port_name: "/dev/ttyUSB1"
+                baud_rate: 1000000
+                min_motor_id: 9
                 max_motor_id: 16
                 update_rate: 100
     </rosparam>
