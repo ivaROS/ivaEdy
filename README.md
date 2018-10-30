@@ -1,6 +1,9 @@
 # ivaEdy
 edy ros-related packages
 
+## Dependency
+The ivaEdy package has dependency on a ros package named dynamixel_motor. There is a repository named ivaDynamixel which is a modified verison of dynamixel_motor in ivaROS. You should clone this package to your workspace. 
+
 ## Usage
 go to `~/YOUR/ROS_WORKING_SPACE`
 ```
