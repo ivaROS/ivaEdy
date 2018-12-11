@@ -1,0 +1,19 @@
+<package>
+  <name>edy_dualarm_gazebo</name>
+  <version>1.0.0</version>
+  <description>
+    <p>gazebo for handy arm</p>
+  </description>
+  <author>me</author>
+  <maintainer email="rxu72@gatech.edu" />
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>gazebo</run_depend>
+  <export>
+    <architecture_independent />
+  </export>
+</package>

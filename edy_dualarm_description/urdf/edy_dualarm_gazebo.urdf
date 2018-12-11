@@ -1,17 +1,25 @@
 <robot
   name="edy_dualarm_description">
 
+  <!-- the namespace of controller manager should be the same as the spawner -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/edy_dualarm</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
   <link name="root">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size = "0.0 0.0 0.0"/>
+        <box size = "0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size = "0.0 0.0 0.0"/> 
+        <box size = "0.001 0.001 0.001"/> 
       </geometry>
     </collision>     
   </link>
@@ -433,7 +441,7 @@
         ixy="0.00000001101"
         ixz="0.00000000425"
         iyy="0.00000927752"
-        iyz="0.00000007211"
+        iyz="0.00000007311"
         izz="0.00001238747" />
     </inertial>
     <visual>
@@ -912,7 +920,7 @@
         ixy="0.00000001101"
         ixz="0.00000000425"
         iyy="0.00000927752"
-        iyz="0.00000007211"
+        iyz="0.00000007311"
         izz="0.00001238747" />
     </inertial>
     <visual>
@@ -1030,4 +1038,299 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
+  <gazebo reference="base_link">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="l_link_2">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="l_link_3">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="l_link_4">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="l_link_5">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="l_link_6">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="l_link_7">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="l_link_8">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="l_link_9">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="r_link_2">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="r_link_3">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="r_link_4">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="r_link_5">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="r_link_6">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="r_link_7">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="r_link_8">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+  <gazebo reference="r_link_9">
+    <turnGravityOff>False</turnGravityOff>
+    <selfCollide>False</selfCollide>
+  </gazebo>
+
+  <gazebo reference="l_joint_1">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_joint_2">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_joint_3">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_joint_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_joint_5">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_joint_6">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_joint_7">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_joint_8">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_joint_1">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_joint_2">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_joint_3">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_joint_4">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_joint_5">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_joint_6">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_joint_7">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_joint_8">
+    <implicitSpringDamper>True</implicitSpringDamper>
+  </gazebo>
+
+  <!-- transmission that link actuators to joints-->
+  <transmission name="l_tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint_1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_motor_1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="l_tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint_2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_motor_2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="l_tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint_3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_motor_3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="l_tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint_4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_motor_4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="l_tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint_5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_motor_5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="l_tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint_6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_motor_6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="l_tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint_7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_motor_7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="l_tran8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_joint_8">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_motor_8">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+ <transmission name="r_tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_joint_1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_motor_1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="r_tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_joint_2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_motor_2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="r_tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_joint_3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_motor_3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="r_tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_joint_4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_motor_4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="r_tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_joint_5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_motor_5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="r_tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_joint_6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_motor_6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="r_tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_joint_7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_motor_7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="r_tran8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_joint_8">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_motor_8">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
 </robot>
