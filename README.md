@@ -28,7 +28,8 @@ First, launch the node of controller manager which will manage all loaded contro
 ```
 roslaunch edy_dualarm_control controller_manager.launch
 ```
-If you get the problem of permission denied, try to do `sudo chmod 666 /dev/ttyUSB0`
+If you get the problem of permission denied, try to do `sudo chmod 666 /dev/ttyUSB0` or `sudo chmod 666 /dev/ttyUSB1`
+since there are two OpenCM for Edy. 
 
 Then, load joint position controllers and action controllers seperately to avoid synchrinization problem since action controller
 has the dependency on its own joint position controllers.
