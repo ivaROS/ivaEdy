@@ -1,0 +1,9 @@
+<launch>
+  <node name="move_group_tutorial"
+        pkg="edy_singlearm_experiment"
+        type="move_group_tutorial"
+        respawn="false" output="screen">
+    <rosparam command="load"
+              file="$(find edy_singlearm_moveit_config)/config/kinematics.yaml"/>
+  </node>
+</launch>

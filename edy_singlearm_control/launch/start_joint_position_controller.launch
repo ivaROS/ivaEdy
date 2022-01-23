@@ -1,0 +1,61 @@
+<launch>
+  <rosparam file="$(find edy_singlearm_control)/config/edy_singlearm_controllers.yaml" command="load"/>
+
+  <node name="edy_controller_spawner_l_1" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_singlearm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_1"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_2" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_singlearm_manager
+              --port port_0
+              --type=simple
+	      edy_position_controller_l_2"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_3" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_singlearm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_3"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_4" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_singlearm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_4"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_5" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_singlearm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_5"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_6" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_singlearm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_6"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_7" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_singlearm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_7"
+        output="screen"/>
+
+  <node name="edy_controller_spawner_l_8" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_singlearm_manager
+              --port port_0
+              --type=simple
+              edy_position_controller_l_8"
+        output="screen"/>
+
+</launch>
+

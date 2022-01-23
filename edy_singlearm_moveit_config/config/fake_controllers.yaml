@@ -1,0 +1,13 @@
+controller_list:
+  - name: fake_left_arm_controller
+    joints:
+      - l_joint_1
+      - l_joint_2
+      - l_joint_3
+      - l_joint_4
+      - l_joint_5
+      - l_joint_6
+      - l_joint_7
+  - name: fake_suction_controller
+    joints:
+      - l_joint_8

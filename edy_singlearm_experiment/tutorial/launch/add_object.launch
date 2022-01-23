@@ -1,0 +1,9 @@
+<launch>
+  <node name="add_object"
+        pkg="edy_singlearm_experiment"
+        type="add_object"
+        respawn="false" output="screen">
+    <rosparam command="load"
+              file="$(find edy_singlearm_moveit_config)/config/kinematics.yaml"/>
+  </node>
+</launch>

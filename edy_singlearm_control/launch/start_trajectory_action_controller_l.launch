@@ -1,0 +1,18 @@
+<launch>
+  <rosparam file="$(find edy_singlearm_control)/config/edy_singlearm_controllers.yaml" command="load"/>
+
+  <node name="edy_action_controller_spawner_l" pkg="dynamixel_controllers" type="controller_spawner.py"
+        args="--manager=edy_singlearm_manager
+              --type=meta
+              edy_joint_trajectory_action_controller_l
+              edy_position_controller_l_1
+	      edy_position_controller_l_2
+              edy_position_controller_l_3
+              edy_position_controller_l_4
+              edy_position_controller_l_5
+              edy_position_controller_l_6
+              edy_position_controller_l_7"
+        output="screen"/>
+
+</launch>
+

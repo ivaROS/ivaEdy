@@ -1,0 +1,127 @@
+#position controllers and trajectory controller for left arm which is with suction
+edy_position_controller_l_1:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_joint_1
+    joint_speed: 0.5
+    motor:
+        id: 1
+        init: 2048
+        min: 0
+        max: 4096
+        bias: 0.0 #-0.528617013529 #-0.608617013529
+
+edy_position_controller_l_2:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_joint_2
+    joint_speed: 0.5
+    joint_compliance_margin: 1
+    joint_compliance_slope: 4
+    motor:
+        id: 2
+        init: 2048
+        min: 0
+        max: 4096
+        bias: 0 #-0.160377691373
+
+edy_position_controller_l_3:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_joint_3
+    joint_speed: 0.5
+    motor:
+        id: 3
+        init: 2048
+        min: 0
+        max: 4096
+        p_gain: 32
+        i_gain: 1
+        d_gain: 1
+
+edy_position_controller_l_4:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_joint_4
+    joint_speed: 0.5
+    motor:
+        id: 4
+        init: 2048
+        min: 0
+        max: 4096
+        p_gain: 32
+        i_gain: 1
+        d_gain: 1
+
+edy_position_controller_l_5:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_joint_5
+    joint_speed: 0.5
+    motor:
+        id: 5
+        init: 512
+        min: 0
+        max: 1023
+
+edy_position_controller_l_6:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_joint_6
+    joint_speed: 0.5
+    motor:
+        id: 6
+        init: 512
+        min: 0
+        max: 1023
+        bias: 0
+
+edy_position_controller_l_7:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_joint_7
+    joint_speed: 0.5
+    motor:
+        id: 7
+        init: 512
+        min: 0
+        max: 1023
+
+edy_position_controller_l_8:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_joint_8
+    joint_speed: 0.5
+    joint_torque_limit: 1.0
+    motor:
+        id: 8
+        init: 512
+        min: 0 #400
+        max: 1023 #611
+
+edy_joint_trajectory_action_controller_l:
+    controller:
+        package: dynamixel_controllers
+        module: joint_trajectory_action_controller
+        type: JointTrajectoryActionController
+    joint_trajectory_action_node:
+        min_velocity: 0.5
+        constraints:
+            goal_time: 5.0
+
