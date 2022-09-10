@@ -6,17 +6,21 @@ The ivaEdy package has dependency on a ros package named dynamixel_motor. There 
 
 ## Usage
 go to `~/YOUR/ROS_WORKING_SPACE`
-```
+
+```bash
 cd src/
 git clone https://github.com/ivaROS/ivaEdy.git
+git clone https://github.com/ivaROS/ivaDynamixel.git
 cd ..
 catkin_make
 ```
+
 Note: you may see error when generating cmakelist, please install any missing packages according to the error messages. 
 
-ex. you will need `dynamixel_motor`
-```
-git clone https://github.com/arebgun/dynamixel_motor.git
+ex. you will need [`dynamixel_motor`](https://github.com/ivaROS/ivaDynamixel)
+
+```bash
+git clone https://github.com/ivaROS/ivaDynamixel.git
 ```
 
 ## package 

@@ -3,14 +3,15 @@ project(edy_dualarm_experiment)
 
 SET(CMAKE_CXX_FLAGS "-std=c++0x")
 
-find_package(catkin REQUIRED COMPONENTS moveit_core moveit_ros_planning moveit_ros_planning_interface pluginlib cmake_modules)
+find_package(catkin REQUIRED COMPONENTS dynamixel_msgs moveit_core moveit_ros_planning moveit_ros_planning_interface pluginlib cmake_modules)
 
 find_package(Boost REQUIRED system filesystem date_time thread)
 
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES pr2_moveit_tutorials
-  CATKIN_DEPENDS 
+  CATKIN_DEPENDS
+    dynamixel_msgs
     moveit_core
     moveit_ros_planning_interface
     interactive_markers
