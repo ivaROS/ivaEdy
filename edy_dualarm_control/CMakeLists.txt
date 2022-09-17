@@ -13,7 +13,6 @@ install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY script DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
 install(
-  PROGRAMS
-    scripts/disable_torque_edy.py
+  PROGRAMS script/disable_torque_edy.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
